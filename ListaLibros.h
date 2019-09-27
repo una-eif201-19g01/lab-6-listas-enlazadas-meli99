@@ -1,14 +1,26 @@
-//
-// Created by Maikol Guzman  on 2019-09-16.
-//
+#ifndef LISTALIBROS_H
+#define LISTALIBROS_H
 
-#ifndef LAB_6_LISTAS_ENLAZADAS_LISTALIBROS_H
-#define LAB_6_LISTAS_ENLAZADAS_LISTALIBROS_H
+#include "Nodo.h"
 
+using namespace std;
 
 class ListaLibros {
-
+	Nodo *actual;
+	Nodo *primero;
+public:
+	ListaLibros();
+	void setActual(Nodo *actual);
+	void setPrimero(Nodo *primero);
+	Nodo *getActual()const;
+	Nodo *getPrimero()const;
+	virtual ~ListaLibros();
+	string toString();
+	void insertarFinal(Libro &_libro);
+	bool eliminarFinal();
+	bool encuentraLibro(int);
+	string obtenerNombreLibro(int);
+	int totalNodos();
 };
 
-
-#endif //LAB_6_LISTAS_ENLAZADAS_LISTALIBROS_H
+#endif
