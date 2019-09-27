@@ -21,7 +21,7 @@ public:
 	void setEditorial(const string &editorial);
 	void setTitulo(const string &titulo);
 	void setAutor(const string &autor);
-	void setIsbn(int in);
+	void setIn(int in);
 	void setAno(int ano);
 	const string &getEditorial() const;
 	const string &getTitulo() const;
