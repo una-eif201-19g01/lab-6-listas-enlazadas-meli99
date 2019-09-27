@@ -48,6 +48,6 @@ int Libro::getAno()const{
 
 string Libro::toString(){
 	string reporte;
-	reporte=+"Titulo del libro: "+getAutor()+"\n"+"el autor del libro es:"+getAutor()+ "\n" +"el año de publicacion del libro es:" + to_string(getAnno()) + "\n" + "el codigo ISBN del libro es: " +to_string(getIn()) + "\n";
+	reporte=+"Titulo del libro: "+getAutor()+"\n"+"el autor del libro es:"+getAutor()+ "\n" +"el año de publicacion del libro es:" + to_string(getAno()) + "\n" + "el codigo ISBN del libro es: " +to_string(getIn()) + "\n";
 	return reporte;
 }
