@@ -1,14 +1,19 @@
-//
-// Created by Maikol Guzman  on 2019-09-16.
-//
+#ifndef NODO_H
+#define NODO_H
 
-#ifndef LAB_6_LISTAS_ENLAZADAS_NODO_H
-#define LAB_6_LISTAS_ENLAZADAS_NODO_H
-
-
+#include "libro.h"
+using namespace std;
 class Nodo {
-
+	Nodo *next;
+	Libro libro;
+public:
+	Nodo();
+	Nodo(const Libro &libro, Nodo *Next);
+	void setNext(Nodo *next);
+	void setLibro(const Libro &libro);
+	Nodo *getNext() const;
+	const Libro &getLibro() const;
+	string toString();
 };
 
-
-#endif //LAB_6_LISTAS_ENLAZADAS_NODO_H
+#endif 
