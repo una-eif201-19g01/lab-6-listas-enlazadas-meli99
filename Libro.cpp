@@ -3,7 +3,12 @@
 Libro::Libro(){	
 }
 
-Libro::Libro(const string &editorial,const string &titulo,const string &autor,int ano,int in) : titulo(titulo),autor(autor),editorial(editorial),anno(anno),isbn(isbn){
+Libro::Libro(const string &editorial,const string &titulo,const string &autor,int ano,int in) {
+	Libro::editorial = editorial;
+	Libro::titulo = titulo;
+	Libro::autor = autor;
+	Libro::ano = ano;
+	Libro::in = in;
 }
 
 void Libro::setEditorial(const string &editorial){

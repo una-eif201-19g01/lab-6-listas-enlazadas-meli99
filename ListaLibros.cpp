@@ -1,5 +1,5 @@
 #include "ListaLibros.h"
-#include "Libro.h"
+// #include "Libro.h"
 
 ListaLibros::ListaLibros(){
 	primero=nullptr;
@@ -41,37 +41,43 @@ string ListaLibros::toString(){
 }
 
 void ListaLibros::insertarFinal(Libro &_libro){
-	actual=primero;
-	if (primero==nullptr) {
-		primero=new Nodo(_libro, nullptr);
-	} 
-	else{
-		while(actual->getNext()!=nullptr)
-			actual=actual->getNext();
-	}
-		actual->setNext(new Nodo(_libro,nullptr));
+ 	actual = primero;
+    if (primero == nullptr) {
+        primero = new Nodo(_libro, nullptr);
+    } 
+	else {
+        while (actual->getNext() != nullptr) {
+            actual=actual->getNext();
+        }
+        actual->setNext(new Nodo(_libro, nullptr));
+    }
 }
 
-bool ListaLibros::eliminarFinal(){
+bool ListaLibros::eliminarFinal() {
 	actual=primero;
 	if(primero==nullptr){
 		return false;
+	} else if (primero->getNext() == nullptr) {
+		delete primero;
 	} else {
-		while(actual->getNext()!=nullptr) {
-			actual = actual->getNext();
+		Nodo* penultimo = actual; //Para no ser el ultimo directamente
+		while(penultimo->getNext()->getNext()!=nullptr) {
+			penultimo = penultimo->getNext();
 		}
-		delete actual;
+		delete (penultimo->getNext());
+		penultimo->setNext(nullptr);
 	}
-	
+	return true;
 }
 
-bool ListaLibros::encuentraLibro(int n){
+bool ListaLibros::encuentraLibro(int n) {
 	actual=primero;
-	while(actual!=NULL){
-		if(n==actual->getLibro().getIn()){
-			return true;}
-		else{
-			actual->getNext();
+	while(actual!=nullptr){
+		if(n==actual->getLibro().getIn()) {
+			return true;
+		}
+		else {
+			actual = actual->getNext();
 		}
 	} return false;
 }

@@ -1,14 +1,14 @@
 #ifndef NODO_H
 #define NODO_H
 
-#include "libro.h"
+#include "Libro.h"
 using namespace std;
 class Nodo {
-	Nodo *next;
+	Nodo* next;
 	Libro libro;
 public:
 	Nodo();
-	Nodo(const Libro &libro, Nodo *Next);
+	Nodo(const Libro& libro, Nodo* Next);
 	void setNext(Nodo *next);
 	void setLibro(const Libro &libro);
 	Nodo *getNext() const;
